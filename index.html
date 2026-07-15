@@ -1,0 +1,397 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow,noarchive">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
+  <meta name="description" content="顧客成果、総費用、連携、運用実行力を軸にEC基盤と成長施策を評価する方法の公開概要です。">
+  <title>顧客起点のEC成長・基盤評価 | 公開概要</title>
+  <style>
+    :root {
+      color-scheme: light dark;
+      --bg: #f4f6f4;
+      --surface: #ffffff;
+      --surface-soft: #e9efeb;
+      --text: #17211d;
+      --muted: #53615b;
+      --line: #cbd5cf;
+      --accent: #1f5b48;
+      --accent-strong: #174536;
+      --accent-text: #ffffff;
+      --focus: #1570b8;
+      --radius: 14px;
+      --shadow: 0 20px 50px rgb(23 33 29 / 8%);
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Noto Sans JP", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --bg: #101613;
+        --surface: #18201c;
+        --surface-soft: #202c26;
+        --text: #edf4f0;
+        --muted: #b4c1ba;
+        --line: #39483f;
+        --accent: #75b99d;
+        --accent-strong: #97cdb6;
+        --accent-text: #102019;
+        --focus: #75bfff;
+        --shadow: 0 20px 50px rgb(0 0 0 / 26%);
+      }
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.75;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    a { color: inherit; }
+    a:focus-visible {
+      outline: 3px solid var(--focus);
+      outline-offset: 4px;
+    }
+
+    .wrap {
+      width: min(1120px, calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .site-header {
+      min-height: 68px;
+      display: flex;
+      align-items: center;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .site-header .wrap {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      margin: 0;
+      font-size: 0.85rem;
+      font-weight: 750;
+      letter-spacing: 0.06em;
+    }
+
+    .site-header a {
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 650;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 5px;
+    }
+
+    main { overflow: visible; }
+
+    .hero {
+      padding: clamp(64px, 10vw, 112px) 0 clamp(56px, 8vw, 92px);
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: clamp(36px, 8vw, 96px);
+      align-items: center;
+    }
+
+    .hero-grid > * { min-width: 0; }
+
+    .eyebrow {
+      margin: 0 0 18px;
+      color: var(--accent-strong);
+      font-size: 0.78rem;
+      font-weight: 750;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      max-width: 100%;
+      margin: 0;
+      font-size: clamp(2.2rem, 5vw, 4.35rem);
+      line-height: 1.08;
+      letter-spacing: -0.045em;
+      overflow-wrap: anywhere;
+    }
+
+    .lead {
+      max-width: 42rem;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.05rem, 1.7vw, 1.22rem);
+    }
+
+    .method-visual {
+      padding: 28px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      background: var(--surface);
+      box-shadow: var(--shadow);
+    }
+
+    .method-visual h2 {
+      margin: 0 0 20px;
+      font-size: 1rem;
+      letter-spacing: 0.02em;
+    }
+
+    .method-flow {
+      display: grid;
+      gap: 12px;
+      margin: 0;
+      padding: 0;
+      list-style: none;
+      counter-reset: method;
+    }
+
+    .method-flow li {
+      position: relative;
+      display: grid;
+      grid-template-columns: 42px 1fr;
+      gap: 14px;
+      align-items: center;
+      min-height: 58px;
+      padding: 10px 14px;
+      border-radius: calc(var(--radius) - 4px);
+      background: var(--surface-soft);
+      counter-increment: method;
+      font-weight: 700;
+    }
+
+    .method-flow li::before {
+      content: counter(method, decimal-leading-zero);
+      display: grid;
+      place-items: center;
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      color: var(--accent-text);
+      background: var(--accent);
+      font-size: 0.78rem;
+      font-variant-numeric: tabular-nums;
+    }
+
+    .principles {
+      padding: clamp(62px, 9vw, 104px) 0;
+      border-block: 1px solid var(--line);
+      background: var(--surface);
+    }
+
+    .section-heading {
+      max-width: 700px;
+      margin-bottom: 44px;
+    }
+
+    .section-heading h2 {
+      margin: 0;
+      font-size: clamp(1.9rem, 4vw, 3.2rem);
+      line-height: 1.2;
+      letter-spacing: -0.03em;
+    }
+
+    .section-heading p {
+      margin: 18px 0 0;
+      color: var(--muted);
+    }
+
+    .principle-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 40px;
+    }
+
+    .principle {
+      padding: 28px 0 30px;
+      border-top: 1px solid var(--line);
+    }
+
+    .principle h3 {
+      margin: 0 0 10px;
+      color: var(--accent-strong);
+      font-size: 1.12rem;
+    }
+
+    .principle p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .sharing {
+      padding: clamp(62px, 9vw, 104px) 0;
+    }
+
+    .sharing-panel {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 36px;
+      align-items: center;
+      padding: clamp(30px, 5vw, 54px);
+      border-radius: var(--radius);
+      color: var(--accent-text);
+      background: var(--accent);
+    }
+
+    .sharing h2 {
+      margin: 0;
+      font-size: clamp(1.65rem, 3vw, 2.4rem);
+      line-height: 1.3;
+    }
+
+    .sharing p {
+      max-width: 46rem;
+      margin: 14px 0 0;
+      opacity: 0.92;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid currentColor;
+      border-radius: calc(var(--radius) - 4px);
+      color: var(--accent-text);
+      font-weight: 750;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: transform 150ms ease, background-color 150ms ease;
+    }
+
+    .button:hover { background: rgb(255 255 255 / 12%); }
+    .button:active { transform: translateY(1px); }
+
+    footer {
+      padding: 26px 0 34px;
+      border-top: 1px solid var(--line);
+      color: var(--muted);
+      font-size: 0.84rem;
+    }
+
+    footer .wrap {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      flex-wrap: wrap;
+    }
+
+    footer p { margin: 0; }
+
+    @media (max-width: 760px) {
+      .wrap { width: min(100% - 28px, 1120px); }
+      .site-header .wrap { gap: 12px; }
+      .site-header a { display: none; }
+      .hero { padding-top: 54px; }
+      .hero-grid,
+      .sharing-panel { grid-template-columns: 1fr; }
+      .hero-grid { gap: 40px; }
+      h1 { max-width: 100%; }
+      .lead { font-size: 1rem; }
+      .method-visual { padding: 22px; }
+      .method-flow li {
+        grid-template-columns: 36px minmax(0, 1fr);
+        gap: 12px;
+        padding-inline: 12px;
+        font-size: 0.92rem;
+        overflow-wrap: anywhere;
+      }
+      .method-flow li::before { width: 32px; height: 32px; }
+      .principle-grid { grid-template-columns: 1fr; }
+      .sharing-panel { align-items: start; }
+      .button { justify-self: start; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      .button { transition: none; }
+    }
+  </style>
+</head>
+<body>
+  <header class="site-header">
+    <div class="wrap">
+      <p class="brand">COMRADE / COMMERCE STRATEGY</p>
+      <a href="https://comrade-inc.co.jp/" target="_blank" rel="noopener noreferrer">株式会社カムラッド</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div>
+          <p class="eyebrow">Public overview</p>
+          <h1>顧客起点で、EC基盤を選ぶ。</h1>
+          <p class="lead">機能比較だけでなく、顧客成果、総費用、連携、運用実行力を同じ基準で判断します。</p>
+        </div>
+
+        <aside class="method-visual" aria-labelledby="method-title">
+          <h2 id="method-title">判断までの基本プロセス</h2>
+          <ol class="method-flow">
+            <li>現状と顧客課題を把握</li>
+            <li>共通要件と証拠を整理</li>
+            <li>同一条件で比較・選定</li>
+            <li>公開後も改善を継続</li>
+          </ol>
+        </aside>
+      </div>
+    </section>
+
+    <section class="principles" aria-labelledby="principles-title">
+      <div class="wrap">
+        <div class="section-heading">
+          <h2 id="principles-title">評価するのは、導入時の機能数だけではありません。</h2>
+          <p>投資判断から公開後の改善まで、一貫した基準で事業価値と実行可能性を確認します。</p>
+        </div>
+
+        <div class="principle-grid">
+          <article class="principle">
+            <h3>顧客成果</h3>
+            <p>商品発見、購入、受取、再購入の各場面で、顧客の迷いや負担をどこまで減らせるかを確認します。</p>
+          </article>
+          <article class="principle">
+            <h3>総費用</h3>
+            <p>初期費用だけでなく、運用、連携、保守、社内工数、移行と撤退まで含めて比較します。</p>
+          </article>
+          <article class="principle">
+            <h3>連携実現性</h3>
+            <p>店舗、在庫、会員、物流、決済など、事業に必要な連携を実証可能な根拠で評価します。</p>
+          </article>
+          <article class="principle">
+            <h3>運用実行力</h3>
+            <p>公開をゴールにせず、計測、改善、障害対応、責任分担を継続できる体制まで確認します。</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="sharing" aria-labelledby="sharing-title">
+      <div class="wrap">
+        <div class="sharing-panel">
+          <div>
+            <h2 id="sharing-title">詳細資料は認証付きで共有します。</h2>
+            <p>案件固有の計画、比較結果、費用、体制、契約情報は、秘密保持と閲覧権限を確認した関係者に限定します。</p>
+          </div>
+          <a class="button" href="https://comrade-inc.co.jp/" target="_blank" rel="noopener noreferrer">会社情報</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <p>顧客起点のEC成長・基盤評価 公開概要</p>
+      <p>株式会社カムラッド</p>
+    </div>
+  </footer>
+</body>
+</html>
